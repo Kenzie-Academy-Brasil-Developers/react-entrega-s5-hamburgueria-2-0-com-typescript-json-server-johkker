@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Box, Grid } from "@mui/material";
+import { Box, Button, Card, CardMedia, Grid } from "@mui/material";
 
 export const PageContainer = styled(Box)`
   display: flex;
@@ -91,10 +91,8 @@ export const ShoppingContainer = styled(Box)`
   align-items: center;
   justify-content: flex-start;
   padding-left: 3vh;
-  @media screen and (min-width: 600px) {
-    margin-left: 115px;
-    margin-right: 115px;
-    padding-left: 0;
+  @media screen and (min-width: 780px) {
+    padding-left: 115px;
   }
 `;
 
@@ -113,7 +111,18 @@ export const ItemsList = styled(Box)`
     display: none;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 780px) {
     flex-wrap: wrap;
   }
 `;
+
+export const CardContainer = styled(Card)`
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+
+  :active & :focus {
+    border: 2px solid #27ae60;
+  }
+`;
+
+export const CardButton = styled(Button)``;

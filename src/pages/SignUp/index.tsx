@@ -7,7 +7,7 @@ import {
   LogoContainer,
   LogoInfoContainer,
   PageContainer,
-} from "../../styles/Containers/styles";
+} from "../../styles/styles";
 import { FiShoppingBag } from "react-icons/fi";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -16,6 +16,7 @@ import { Heading } from "@chakra-ui/react";
 import { Box, Button, TextField, Link } from "@mui/material";
 import { api } from "../../api/api";
 import { useHistory } from "react-router-dom";
+import toast from "react-hot-toast";
 
 interface SignUpData {
   name: string;
@@ -47,10 +48,14 @@ export const SignUp = () => {
     api
       .post("/register", { name, email, password })
       .then((response) => {
-        console.log("Cadastro efetuado com sucesso");
+        toast.success("Cadastro efetuado com sucesso!");
+        toast.success("Redirecionando para a página de login.");
+        setTimeout(() => {
+          history.push("/");
+        }, 5000);
       })
       .catch((err) => {
-        console.log("Cadastro não efetuado");
+        toast.error("E-mail já cadastrado!");
       });
   };
 

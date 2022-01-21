@@ -7,3 +7,7 @@
   width: 95vw;
   height: 95vh;
 }
+
+html {
+  margin-right: 0px;
+}

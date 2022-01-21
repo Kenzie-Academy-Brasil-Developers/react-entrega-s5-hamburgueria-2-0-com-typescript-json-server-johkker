@@ -6,7 +6,7 @@ import {
   LogoContainer,
   LogoInfoContainer,
   PageContainer,
-} from "../../styles/Containers/styles";
+} from "../../styles/styles";
 import { FiShoppingBag } from "react-icons/fi";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
